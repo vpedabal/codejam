@@ -11,7 +11,7 @@ uint64_t get_total_lines(char *filename)
 
     fptr = fopen (filename, "r");
     if(fptr == NULL) {
-        printf("Unable to open file");
+        printf("Unable to open file\n");
     } else {
             while ((linesize = getline(&buffer, &len, fptr)) != -1) 
                 linecount++;
@@ -31,7 +31,7 @@ char *get_line(char *filename, uint64_t line)
 
     fptr = fopen (filename, "r");
     if(fptr == NULL) {
-        printf("Unable to open file");
+        printf("Unable to open file\n");
     } else {
         for (index = 0; index < line; index++)
         {
@@ -41,7 +41,9 @@ char *get_line(char *filename, uint64_t line)
                 return NULL;
             }
         }
+/*
         printf("Line : %lu - %s", index, buffer);
+ */
     }
     return buffer;
 

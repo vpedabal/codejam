@@ -16,8 +16,8 @@ int main(int argc, char **argv)
         count--;
     }
     if (argc > 2) {
-        if (strncasecmp("wordsrev", *(argv+1), sizeof("wordrev")) == 0) {
-            wordrev(argc, argv);
+        if (strncasecmp("wordrev", *(argv+1), sizeof("wordrev")) == 0) {
+            wordrev(*(argv+2));
         } else if (strncasecmp("net", *(argv+1), sizeof("net")) == 0) {
         } else if (strncasecmp("help", *(argv+1), sizeof("help")) == 0) {
             printf("Application to test codeJAM routines\n");

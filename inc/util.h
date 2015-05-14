@@ -21,6 +21,8 @@ typedef struct {
     unsigned int msec;
 } duration_t;
 
+uint64_t case_line_size;
+
 duration_t convert_to_days(double seconds);
 /* Get total test cases present in the file
  * usually present in the first line of the sample file
@@ -32,6 +34,6 @@ uint64_t get_tot_cases(char *filename, uint64_t lineno);
  * indicating the corresponding line's length including the end-of-line character
  * Returns the total number of lines in the test case
  */
-uint64_t get_test_case(uint64_t caseid, char** buffer, int* bufferlen);
+uint64_t get_test_case(char *filename, uint64_t caseid, char*** buffer);
 /*void log_out(); */
 #endif

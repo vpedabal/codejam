@@ -3,6 +3,6 @@
 
 #include "util.h"
 
-uint64_t wordrev(int argc, char **argv);
+uint64_t wordrev(char *argv);
 #endif
 

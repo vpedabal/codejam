@@ -21,7 +21,7 @@ DIR:
 	mkdir obj; mkdir bin
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(INC_DIR) -Wall -pedantic -ansi -c -g -o $@ $<$(CFLAGS) 
+	$(CC) $(INC_DIR) -Wall -c -g -o $@ $<$(CFLAGS) 
 
 clean:
 	$(RM) -r obj bin *.o

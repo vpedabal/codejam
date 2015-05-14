@@ -32,5 +32,16 @@ uint64_t get_tot_cases(char *filename, uint64_t lineno)
     return tot_cases;
 }
 
-
+uint64_t get_test_case(char *filename, uint64_t caseid, char*** buffer)
+{
+    uint64_t temp = 0;
+    *buffer = malloc(case_line_size*sizeof(char *)); /*total number of lines */
+    while(temp < case_line_size)
+    {
+        *((*buffer)+temp) = get_line(filename, 2+(caseid*case_line_size)+temp);
+        printf("Got line: %s\n",get_line(filename, 2+(caseid*case_line_size)+temp));
+        temp++;
+    }
+    return temp;
+}
 
