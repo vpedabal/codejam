@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 #include "util.h"
+#include "wordrev.h"
 #include "parseinfo.h"
+
 
 int main(int argc, char **argv)
 {
@@ -13,15 +15,20 @@ int main(int argc, char **argv)
         printf("Arg %d: %s\n", count, argv[count]);
         count--;
     }
-    if (argc > 1) {
-        if (strncasecmp("mem", *(argv+1), sizeof("mem")) == 0) {
+    if (argc > 2) {
+        if (strncasecmp("wordsrev", *(argv+1), sizeof("wordrev")) == 0) {
+            wordrev(argc, argv);
         } else if (strncasecmp("net", *(argv+1), sizeof("net")) == 0) {
         } else if (strncasecmp("help", *(argv+1), sizeof("help")) == 0) {
             printf("Application to test codeJAM routines\n");
-            printf("mem|net|help\n");
+            printf("Usage:\n");
+            printf("./prog <command> <filename>\n");
+            printf("command -> mem|net|help\n");
         } else {
             printf("Invalid parameter passed\n");
         }
+    } else {
+        printf("Not enough arguments\n");
     }
     return 0;
 }

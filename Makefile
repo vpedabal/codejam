@@ -10,7 +10,7 @@ PROG_NAME = prog
 LIB_NAME = codejam
 CC = gcc
 
-_OBJS = parseinfo.o util.o main.o 
+_OBJS = wordrev.o parseinfo.o util.o main.o 
 OBJS = $(patsubst %,$(OBJ_DIR)%,$(_OBJS))
 
 all: DIR $(OBJS)

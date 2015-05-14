@@ -16,3 +16,21 @@ duration_t convert_to_days(double seconds)
     return duration;
 }
 
+uint64_t get_tot_cases(char *filename, uint64_t lineno)
+{
+    uint64_t tot_lines=0, tot_cases=0;
+    char *buf=NULL;
+    tot_lines = get_total_lines(filename);
+    if(0 == tot_lines) {
+        printf("Unable to open the file or no data found in given filename");
+    }
+    buf = get_line(filename, lineno);
+    if(NULL != buf) {
+        tot_cases = strtoull(buf, NULL, 10);
+        free(buf);
+    }
+    return tot_cases;
+}
+
+
+
